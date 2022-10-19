@@ -1,0 +1,218 @@
+@import "/node_modules/aos/dist/aos.css";
+@import "/node_modules/animate.css/animate.css";
+@import url("https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;0,6..96,700;0,6..96,800;0,6..96,900;1,6..96,400;1,6..96,500;1,6..96,600;1,6..96,700;1,6..96,800;1,6..96,900&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Bodoni Moda", serif;
+}
+
+body {
+  background-color: #f6efe6;
+  cursor: none;
+}
+
+.cursor {
+  width: 10px;
+  height: 10px;
+  background-color: #fff;
+  mix-blend-mode: difference;
+  position: absolute;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 99;
+  animation: 1s ease-in-out infinite alternate saul;
+}
+
+@keyframes saul {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes border {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 100%;
+  }
+}
+@keyframes block {
+  0% {
+    height: 100%;
+  }
+  100% {
+    height: 0%;
+  }
+}
+@keyframes block2 {
+  0% {
+    right: 0%;
+    top: 0%;
+  }
+  100% {
+    right: 100%;
+    top: 100%;
+  }
+}
+
+.banner {
+  height: 100vh;
+  position: relative;
+  .saul-wrap {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    .saul {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      opacity: 0;
+      animation: 2s forwards reverse saul;
+    }
+  }
+  &.is-inview .saul {
+    animation: 2s forwards saul;
+  }
+  .logo-wrap {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    .logo {
+      top: 20vh;
+      left: 60vw;
+      opacity: 0;
+      position: absolute;
+    }
+  }
+  &.is-inview .logo {
+    animation: 2s forwards 0.5s saul;
+  }
+}
+
+.title1 {
+  display: flex;
+  padding: 0 100px;
+  justify-content: flex-start;
+  margin-top: 500px;
+  span {
+    font-size: 120px;
+    text-align: center;
+    text-transform: uppercase;
+  }
+}
+
+.section1 {
+  padding: 0 100px;
+  margin-top: -25px;
+  p {
+    font-size: 24px;
+    position: relative;
+    line-height: 30px;
+    word-break: break-all;
+    .border {
+      position: absolute;
+      width: 3px;
+      height: 0;
+      background-color: black;
+      top: 0;
+      left: -10px;
+    }
+    .block {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #f6efe6;
+    }
+  }
+  & p.is-inview .block {
+    animation: 0.5s cubic-bezier(0.8, 0.01, 0.18, 0.99) 0.2s forwards block;
+  }
+  & p.is-inview .border {
+    animation: 0.5s cubic-bezier(0.8, 0.01, 0.18, 0.99) 0.2s forwards border;
+  }
+}
+
+.title2 {
+  display: flex;
+  padding: 0 100px;
+  justify-content: flex-end;
+  margin-top: 500px;
+  span {
+    font-size: 120px;
+    text-align: center;
+    text-transform: uppercase;
+  }
+}
+
+.section2 {
+  padding: 0 100px;
+  margin-top: -25px;
+  div.article {
+    p {
+      font-size: 24px;
+      position: relative;
+      line-height: 30px;
+      word-break: break-all;
+      .border {
+        position: absolute;
+        width: 3px;
+        height: 0;
+        background-color: black;
+        top: 0;
+        right: -10px;
+      }
+      .block {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #f6efe6;
+      }
+    }
+    & p.is-inview .block {
+      animation: 0.5s cubic-bezier(0.8, 0.01, 0.18, 0.99) 0.2s forwards block;
+    }
+    & p.is-inview .border {
+      animation: 0.5s cubic-bezier(0.8, 0.01, 0.18, 0.99) 0.2s forwards border;
+    }
+  }
+}
+
+
+.section3 {
+  margin-top: 400px;
+  width: 100%;
+  height: 500px;
+  display: flex;
+  border: 1px solid black;
+  gap: 20px;
+  align-items: center;
+  flex: 1 1 200px;
+  .box {
+    width: 400px;
+    height: 200px;
+    background-color: lightblue;
+    &:nth-child(even) {
+      background-color: lightcoral;
+    }
+  }
+}
+
+.section4 {
+  height: 100vh;
+  display: flex;
+}
